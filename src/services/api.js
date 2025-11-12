@@ -4,7 +4,7 @@ const API_BASE_URL = import.meta.env.REACT_APP_API_BASE_URL || 'http://localhost
 
 const api = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 30000,
+  timeout: 240000,
   headers: { 'Content-Type': 'application/json' },
 })
 
@@ -30,4 +30,4 @@ export const getDownloadStatus = async (downloadId) => {
 export const cancelDownload = async (downloadId) => {
   const response = await api.post(`/downloads/${downloadId}/cancel/`)
   return response.data
-} 
+}
